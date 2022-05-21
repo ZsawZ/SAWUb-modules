@@ -6,7 +6,8 @@ from PIL import Image, ImageDraw, ImageFilter, ImageOps
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from plugins.settings.main_settings import module_list, file_list
-
+from prefix import my_prefix
+prefix = my_prefix()
 
 VideoFileClip = import_library("moviepy.editor", "moviepy").VideoFileClip
 
@@ -47,7 +48,7 @@ def process_vid(filename):
     video = video.crop(*box)
 
 
-@Client.on_message(filters.command(["circle", "round"], prefix) & filters.me)
+@Client.on_message(filters.command("circle", "round", prefixes=prefix) & filters.me)
 async def circle(client: Client, message: Message):
     try:
         if not message.reply_to_message:
