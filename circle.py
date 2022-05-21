@@ -48,7 +48,7 @@ def process_vid(filename):
     video = video.crop(*box)
 
 
-@Client.on_message(filters.command("circle", "round", prefixes=prefix) & filters.me)
+@Client.on_message(filters.command("round", prefixes=prefix) & filters.me)
 async def circle(client: Client, message: Message):
     try:
         if not message.reply_to_message:
