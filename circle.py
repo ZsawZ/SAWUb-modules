@@ -114,4 +114,4 @@ async def circle(client: Client, message: Message):
         await message.reply(format_exc(e))
 
 module_list['Circle'] = f'{prefix}circle [реплай на фото или видео]'
-file_list['Circle'] = 'circle.py'
+file_list['Circle'] = 'SAWUb-modules-Circle-py.py'
